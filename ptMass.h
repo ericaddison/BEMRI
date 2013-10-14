@@ -22,12 +22,14 @@ class ptMass {
 	
 	public:
 		ptMass(double, double[3] , double[3]);	// fulll constructor with double array inputs
-		ptMass(double m=1);	// mass only constructor
-		void report();
-		
+		ptMass(double m=1);			// mass only constructor
+		void report();				// print out all stats
+
 		double mass;		// mass value
 		Vector3d pos;		// position vector -- fixed size vector from Eigen
 		Vector3d vel;		// velocity vector
+		double &x, &y, &z;		// references for easy access to postions
+		double &vx, &vy, &vz;	// easy access to velocities
 
 };
 

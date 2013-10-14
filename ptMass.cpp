@@ -11,16 +11,17 @@
 #include "ptMass.h"
 
 // mass only constructor
-ptMass::ptMass(double m)
+ptMass::ptMass(double m) : x(pos[0]), y(pos[1]), z(pos[2]), vx(vel[0]), vy(vel[1]), vz(vel[2])
 {
 	mass = m;
 	
 	pos << 0, 0, 0;		// Comma-initialization of Eigen matrix
 	vel << 0, 0, 0;		// set both pos and vel to zero
+
 }
 
 // full constructor with double arrays
-ptMass::ptMass(double m, double p[3], double v[3])
+ptMass::ptMass(double m, double p[3], double v[3]) : x(pos[0]), y(pos[1]), z(pos[2]), vx(vel[0]), vy(vel[1]), vz(vel[2])
 {
 	mass = m;
 	
@@ -50,9 +51,14 @@ void ptMassTester()
 	
 	cout << "\nm2 report:\n";
 	m2.report();
-	
+
 	cout << "\nm3 report:\n";
 	m3.report();
+		
+	cout << "\nchanging m3 elemetns...\n";
+	m3.vx = 10; m3.z = 1000;
+	m3.report();
+		
 
 	return;
 }
