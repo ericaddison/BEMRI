@@ -1,6 +1,6 @@
 ** BEMRI README **
 ** Eric Addison **
 
-Work in progress! This repo contains the codes to transition my BEMRI research program from C to C++. This will include creating classes for binary systems and the simulation, and migrating from my own numerical method codes to a more standard library (i.e. Eigen or Boost).
+Work in progress! This repo contains the codes to transition my BEMRI research program from C to C++. This will include creating classes for binary systems and the simulation, and migrating from my own numerical method codes to a more standard library (e.g. Eigen or Boost).
 
 The BEMRI project explores Binary Extreme Mass Ratio Inspiral scenarios. That is, the interaction between a tight CO binary and a supermassive black hole. The simulation is completely Newtonian, as the tidal disruption radius falls well outside of any relativistic regime. 
