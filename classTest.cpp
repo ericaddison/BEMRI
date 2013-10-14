@@ -14,8 +14,14 @@
 
 int main()
 {
-	ptMassTester();
+	//ptMassTester();
 	
+
+	Vector3d x, y;
+	x << 1, 2, 3;
+	y << -1, 4, 5;
+
+	std::cout << "x - y = : " << (x-y).transpose() << std::endl;
 
 	return 0;
 }
