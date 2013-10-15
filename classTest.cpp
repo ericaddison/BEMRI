@@ -11,17 +11,14 @@
 
 #include <iostream>
 #include "ptMass.h"
+#include "binary.h"
+
+using namespace Astro;
 
 int main()
 {
-	//ptMassTester();
-	
-
-	Vector3d x, y;
-	x << 1, 2, 3;
-	y << -1, 4, 5;
-
-	std::cout << "x - y = : " << (x-y).transpose() << std::endl;
+	//testPtMass();
+	testBinary();	
 
 	return 0;
 }

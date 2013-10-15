@@ -23,35 +23,43 @@
 #include <Eigen/Dense>	// Eigen library for matrix class
 using namespace Eigen;
 
-class binary{
 
-	public:
-		binary(ptMass *masses[]);		// one of two constructors
-		binary(ptMass *a, ptMass *b);	// one of two constructors  
-		initialize();					// set up initial orbital pos and vel
+namespace Astro
+{
+	class binary{
 
-		double calc_E();				// calculate current total energy
-		double calc_l();				// calculate current angular momentum magnitude
-		double calc_L();				// calculate current ang. mom. vector (also updates magnitude)
-		int calc_th();					// calculate theta, true anomaly
-		double calc_angles();			// calculate current orientation angles (inc, aop, lan)
-		double calc_lifetime();			// calculate Peters' lifetime
+		public:
+			binary(ptMass *masses[]);		// one of two constructors
+			binary(ptMass *a, ptMass *b);	// one of two constructors  
+			void setupOrbit();				// set up initial orbital pos and vel
 
-	private:
-		ptMass *m1, *m2;// the point masses that make up the binary
+			double calc_E();				// calculate current total energy
+			double calc_l();				// calculate current angular momentum magnitude
+			double calc_L();				// calculate current ang. mom. vector (also updates magnitude)
+			int calc_th();					// calculate theta, true anomaly
+			double calc_angles();			// calculate current orientation angles (inc, aop, lan)
+			double calc_lifetime();			// calculate Peters' lifetime
 
-		double e;		// binary eccentricity
-		double a;		// binary semi-major axis (if elliptical)
-		double E;		// binary total energy
-		double l;		// binary angular mometum magnitude
-		Vector3d L;		// angular momentum vector
-		double theta;	// true anomaly
-		double aop;		// argument of periapse angle
-		double inc;		// inclination angle
-		double lan;		// longitude of ascending node angle
-		double M;		// total mass
-		double mu;		// reduced mass
-		double T;		// peters' lifetime
-		Vector3d xCM;	// center of mass position
-		Vector3d vCM;	// velocity of center of mass
-};
+		private:
+			ptMass *m1, *m2;// the point masses that make up the binary
+
+			double e;		// binary eccentricity
+			double a;		// binary semi-major axis (if elliptical)
+			double E;		// binary total energy
+			double l;		// binary angular mometum magnitude
+			Vector3d L;		// angular momentum vector
+			double theta;	// true anomaly
+			double aop;		// argument of periapse angle
+			double inc;		// inclination angle
+			double lan;		// longitude of ascending node angle
+			double M;		// total mass
+			double mu;		// reduced mass
+			double T;		// peters' lifetime
+			Vector3d xCM;	// center of mass position
+			Vector3d vCM;	// velocity of center of mass
+	};
+
+	void testBinary();
+} // END namespace Astro
+
+#endif
