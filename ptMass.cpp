@@ -49,6 +49,8 @@ namespace Astro
 	
 		ptMass m1, m2(10), m3(5,x,v);
 
+		cout << "m1 mass: " << m1.mass << "\n";
+
 		cout << "m1 report:\n";
 		m1.report();
 	

@@ -61,7 +61,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(675, 450);
+        MainWindow->resize(675, 500);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -149,7 +149,7 @@ public:
 
         frame = new QFrame(centralwidget);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setMinimumSize(QSize(450, 350));
+        frame->setMinimumSize(QSize(450, 400));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_2 = new QHBoxLayout(frame);
@@ -175,6 +175,9 @@ public:
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
+        QWidget::setTabOrder(mass1Edit, mass2Edit);
+        QWidget::setTabOrder(mass2Edit, eccEdit);
+        QWidget::setTabOrder(eccEdit, smaEdit);
 
         retranslateUi(MainWindow);
 

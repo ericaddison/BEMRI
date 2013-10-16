@@ -32,14 +32,14 @@ static const uint qt_meta_data_MainWindow[] = {
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x08,
       24,   11,   11,   11, 0x08,
-      36,   11,   11,   11, 0x08,
+      44,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
-    "MainWindow\0\0getParams()\0plotOrbit()\0"
-    "replotOrbit()\0"
+    "MainWindow\0\0getParams()\0plotTwoBodyOrbits()\0"
+    "replotTwoBodyOrbits()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -49,8 +49,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
         case 0: _t->getParams(); break;
-        case 1: _t->plotOrbit(); break;
-        case 2: _t->replotOrbit(); break;
+        case 1: _t->plotTwoBodyOrbits(); break;
+        case 2: _t->replotTwoBodyOrbits(); break;
         default: ;
         }
     }

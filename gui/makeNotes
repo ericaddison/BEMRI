@@ -1,0 +1,2 @@
+had to add include flag -I/usr/include/eigen3/ to Makefile
+and sources ../binary.cpp, ../ptMass.cpp

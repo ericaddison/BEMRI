@@ -5,7 +5,12 @@
 #include <QtGui>
 #include "ui_mainWindow.h"
 #include "qcustomplot.h" // the header file of QCustomPlot.
+#include "../binary.h"	// header file for binary
+#include "../ptMass.h"
 #define PI 3.1415926
+#define MAX(x,y) ((x)>(y)?(x):(y))
+
+using namespace Astro;
 
 class MainWindow;
 
@@ -19,11 +24,11 @@ class MainWindow : public QMainWindow, Ui::MainWindow
 
 	private slots:
 		void getParams();
-		void plotOrbit();
-		void replotOrbit();
+		void plotTwoBodyOrbits();
+		void replotTwoBodyOrbits();
 
 	private:
-		double m1, m2, e, a;	// masses, eccentricity, semi-major axis
+		binary *bin;
 		static const int Ntheta=500;
 		double theta[Ntheta];
 		
